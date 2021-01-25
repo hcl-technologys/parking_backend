@@ -10,7 +10,7 @@ pipeline {
 
          { steps {
 
-           sh '/opt/maven/bin/mvn verify -Dmaven.test.skip=true'
+           sh '/opt/maven/apache-maven-3.6.3/bin/mvn verify -Dmaven.test.skip=true'
 
            junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
 
