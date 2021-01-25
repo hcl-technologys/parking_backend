@@ -21,14 +21,6 @@
                 <sonar.host.url>http://65.0.105.251:9000</sonar.host.url>
 	</properties>
 	
-<properties>
-    <baseFolder>${basedir}</baseFolder>
-</properties>
-<build>
-    <directory>${baseFolder}/target</directory>
-</directory>
-  </properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
