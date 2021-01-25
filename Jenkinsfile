@@ -3,13 +3,13 @@ pipeline {
 	stages {
       stage('Git Checkout') {
          steps {
-            git 'https://github.com/salagarsprabu/parking_backend.git'
+            git 'https://github.com/Ashok-4449/parking_backend.git'
 		}
 	}
 	stage('Build') {
 		steps {
 			withSonarQubeEnv('sonar') {
-				sh '/opt/maven/bin/mvn clean verify sonar:sonar -Dmaven.test.skip=true'
+				sh '/opt/maven/apache-maven-3.6.3/bin/mvn clean verify sonar:sonar -Dmaven.test.skip=true'
 			}
 		}
 	}
@@ -27,7 +27,7 @@ pipeline {
 	}
 	stage ('DB Migration') {
 		steps {
-			sh '/opt/maven/bin/mvn clean flyway:migrate'
+			sh '/opt/maven/apache-maven-3.6.3/bin/mvn clean flyway:migrate'
 		}
 	}
 }
