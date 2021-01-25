@@ -94,6 +94,10 @@
              <id>nexus</id>
              <url>http://65.0.105.251:8081/repository/maven-snapshots</url>
           </snapshotRepository>
+		<repository>
+			<id>nexus</id>
+			<url>http://65.0.105.251:8081/repository/maven-releases</url>
+		</repository>
         </distributionManagement>
 	<build>
 		<plugins>
