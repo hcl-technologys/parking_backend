@@ -6,41 +6,17 @@ pipeline {
             git 'https://github.com/Ashok-4449/parking_backend.git'
 		}
 	}
-		stage ('Publish Unit Test Report')
+		
+	stage(' Build and deploy'){
 
-         { steps {
+            steps{
 
-           sh '/opt/maven/apache-maven-3.6.3/bin/mvn verify -Dmaven.test.skip=true'
+                    sh '/opt/maven/apache-maven-3.6.3/bin/mvn verify -Dmaven.test.skip=true' 
 
-           junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
+                }
 
-          }
-
-         }
-	stage('Build') {
-		steps {
-			withSonarQubeEnv('sonar') {
-				sh '/opt/maven/apache-maven-3.6.3/bin/mvn clean deploy sonar:sonar -Dmaven.test.skip=true'
-			}
-		}
-	}
-	stage("Quality Gate") {
-            steps {
-              timeout(time: 2, unit: 'MINUTES') {
-                waitForQualityGate abortPipeline: true
-              }
-            }
-          }	
-	    stage ('Artifact-Deploy') { 
-
-
-
-        steps { 
-
-            sh '/opt/maven/apache-maven-3.6.3/bin/mvn clean deploy -Dmaven.test.skip=true' 
-
-        } 
-	    }
+        }
+	
 	stage ('Release') {
 		steps {
 			sh 'export JENKINS_NODE_COOKIE=dontkillme ;nohup java -jar $WORKSPACE/target/*.jar &'
