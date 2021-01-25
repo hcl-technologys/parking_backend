@@ -27,7 +27,7 @@ pipeline {
 	}
 	stage ('DB Migration') {
 		steps {
-			sh '/opt/maven/bin/mvn clean flyway:migrate'
+			sh '/opt/maven/apache-maven-3.6.3/bin/mvn clean flyway:migrate'
 		}
 	}
 }
