@@ -18,6 +18,13 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	
+	<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <sonar.host.url>http://65.0.105.251:9000</sonar.host.url>
+  <sonar.login>admin</sonar.login>
+  <sonar.password>Oruganti@2356</sonar.password>
+  </properties>
 
 	<dependencies>
 		<dependency>
@@ -83,7 +90,7 @@
 	<distributionManagement>
           <snapshotRepository>
              <id>nexus</id>
-             <url>http://65.0.105.251:8081/nexus/content/repositories/snapshots</url>
+             <url>http://65.0.105.251:8081/repository/maven-snapshots</url>
           </snapshotRepository>
         </distributionManagement>
 	<build>
