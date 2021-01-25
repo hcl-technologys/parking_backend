@@ -6,6 +6,17 @@ pipeline {
             git 'https://github.com/Ashok-4449/parking_backend.git'
 		}
 	}
+		stage ('Publish Unit Test Report')
+
+         { steps {
+
+           sh '/opt/maven/bin/mvn verify -Dmaven.test.skip=true'
+
+           junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
+
+          }
+
+         }
 	stage('Build') {
 		steps {
 			withSonarQubeEnv('sonar') {
