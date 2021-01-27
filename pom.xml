@@ -18,7 +18,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-                <sonar.host.url>http://65.0.105.251:9000</sonar.host.url>
+                <sonar.host.url>http://13.127.169.142:9000</sonar.host.url>
 	</properties>
 	
 	<dependencies>
@@ -85,11 +85,11 @@
 	<distributionManagement>
           <snapshotRepository>
              <id>nexus</id>
-             <url>http://65.0.105.251:8081/repository/maven-snapshots</url>
+             <url>http://15.207.16.179:8081/repository/maven-snapshots</url>
           </snapshotRepository>
 		<repository>
 			<id>nexus</id>
-			<url>http://65.0.105.251:8081/repository/maven-releases</url>
+			<url>http://15.207.16.179:8081/repository/maven-releases</url>
 		</repository>
         </distributionManagement>
 	<build>
@@ -124,7 +124,7 @@
         		    <artifactId>flyway-maven-plugin</artifactId>
 			    <version>6.3.2</version>
 			    <configuration>
-                              <url>jdbc:mysql://65.0.105.251:3306</url>
+                              <url>jdbc:mysql://15.207.16.179:3306</url>
                               <user>flyuser1</user>
 		              <password>H@ckath0n</password>
 			      <schemas>
