@@ -9,7 +9,7 @@ pipeline {
 	stage('Build and sonar') {
 		steps {
 			withSonarQubeEnv('sonar') {
-				sh '/opt/maven/bin/mvn clean verify install -Dmaven.test.skip=true'
+				sh '/opt/maven/bin/mvn clean verify install sonar:sonar -Dmaven.test.skip=true'
 			}
 		}
 	}
