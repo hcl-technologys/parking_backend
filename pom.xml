@@ -83,14 +83,10 @@
                 </dependency>
 	</dependencies>
 	<distributionManagement>
-          <snapshotRepository>
-             <id>nexus</id>
-             <url>http://15.207.16.179:8081/repository/maven-snapshots</url>
-          </snapshotRepository>
-		<repository>
-			<id>nexus</id>
-			<url>http://15.207.16.179:8081/repository/maven-releases</url>
-		</repository>
+          <repository>
+           <id>releases</id>
+            <url>http://18.224.202.190:8081/nexus/content/repositories/releases</url>
+             </repository>
         </distributionManagement>
 	<build>
 		<plugins>
